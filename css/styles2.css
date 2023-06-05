@@ -46,8 +46,14 @@ button:hover {
   margin: 24px 0 12px 0;
 }
 
-.links{
-  
+.bigContainer{
+  display:flex;
+  align-items: center;
+  justify-content: center;
+  width: 500px;
+  min-height: 100;
+  margin: auto;
+  background-color: green;
 }
 
 img.avatar {
@@ -55,4 +61,12 @@ img.avatar {
   border-radius: 50%;
 }
 
+#title{
+  text-align: center;
+  background-color: green;
+  padding: 10px 10px;
+  width: 200px;
+  margin: auto;
+  margin-top:10px;
+}
 
