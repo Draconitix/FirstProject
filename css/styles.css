@@ -1,11 +1,11 @@
-*{
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 body {
   font-family: Arial, Helvetica, sans-serif;
-  background-color:  #F5F5DC;
+  background-color: #f5f5dc;
 }
 
 form {
@@ -33,7 +33,6 @@ button {
   cursor: pointer;
   width: 100%;
   border-radius: 5px;
-
 }
 
 button:hover {
@@ -62,9 +61,10 @@ td {
   margin: 24px 0 12px 0;
 }
 
-.text{
+.text {
   border: solid 3px pink;
 }
+
 .bigContainer {
   display: flex;
   width: 500px;
@@ -74,7 +74,7 @@ td {
   position: relative;
   top: 50%;
   transform: translateY(30%);
-  box-shadow: 0px 3px 15px rgba(0,0,0,0.2);
+  box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.2);
   background-color: white;
 }
 
@@ -88,7 +88,7 @@ img.avatar {
   border: 2px grey solid;
 }
 
-#registerContainer{
+#registerContainer {
   transform: translateY(20%);
 }
 
