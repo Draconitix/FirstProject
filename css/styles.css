@@ -44,14 +44,6 @@ td {
   margin: 20px;
 }
 
-/* Extra style for the cancel button (red) */
-.cancelbtn {
-  width: auto;
-  padding: 10px 30px;
-  background-color: #f44336;
-  margin-left: -14px;
-}
-
 .container {
   padding: 16px;
 }
