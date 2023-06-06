@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <title>Contacts Page</title>
-    <script type="text/javascript" src="js/code.js"></script>
+    <script type="text/javascript" src="../js/code.js"></script>
     <link href="../css/styles2.css" rel="stylesheet" />
     <link
       href="https://fonts.googleapis.com/css?family=Ubuntu"
@@ -10,7 +10,12 @@
     />
   </head>
   <body>
-    <h1>Data from Previous Page</h1>
+    <h1>Hello <span id="fullname"></span></h1>
+    <script>
+      firstname = localStorage.getItem("fullname");
+      lastname = localStorage.getItem("LastName");
+      document.getElementById("fullname").textContext = firstname + " " + lastname;
+    </script>
     <div>User ID:<br /><span id="userId"></span></div>
     <script>
       userId = localStorage.getItem("user-id");
