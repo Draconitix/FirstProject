@@ -8,42 +8,39 @@
   </head>
 
   <body>
-    <h1 id="title">Login</h1>
-    <div class="bigContainer">
-      <form action="./php/Login.php" method="post">
-        <div class="imgcontainer">
-          <img src="../images/img_avatar.png" alt="Avatar" class="avatar"/>
-        </div>
+    <h1>Login</h1>
+    <form action="./php/Login.php" method="post">
+      <div class="imgcontainer">
+        <img src="../images/img_avatar.png" alt="Avatar" class="avatar" />
+      </div>
 
-        <div class="container">
-          <label for="userName"><b>Username</b></label>
-          <input
-            type="text"
-            placeholder="Enter Username"
-            id="loginName"
-            name="loginName"
-            required
-          />
+      <div class="container">
+        <label for="userName"><b>Username</b></label>
+        <input
+          type="text"
+          placeholder="Enter Username"
+          id="loginName"
+          name="loginName"
+          required
+        />
 
-          <label for="psw"><b>Password</b></label>
-          <input
-            type="password"
-            placeholder="Enter Password"
-            id="loginPassword"
-            name="loginPassword"
-            required
-          />
+        <label for="psw"><b>Password</b></label>
+        <input
+          type="password"
+          placeholder="Enter Password"
+          id="loginPassword"
+          name="loginPassword"
+          required
+        />
 
-          <button type="submit" id="loginButton">Login</button>
-          <div class="links">
-            
-          </div>
-          <div class="container" style="background-color: #f1f1f1">
-          <button type="button" class="cancelbtn">Clear</button>
+        <button type="submit" id="loginButton">Login</button>
+        <div class="links">
           Don't have an account? <a href="register.html">Sign up now</a>
-          </div>
         </div>
-      </form>
-    </div>
+        <div class="container" style="background-color: #f1f1f1">
+          <button type="button" class="cancelbtn" id="loginButton">Cancel</button>
+        </div>
+      </div>
+    </form>
   </body>
 </html>

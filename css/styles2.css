@@ -1,4 +1,6 @@
-body {font-family: Arial, Helvetica, sans-serif;}
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
 
 form {
   border: 3px solid #f1f1f1;
@@ -29,12 +31,24 @@ button:hover {
   opacity: 0.8;
 }
 
+tr{
+  margin: auto;
+}
+
+th, td{
+  box-sizing: border-box;
+  border: 1px solid black;
+  padding: 20px;
+  width:20px;
+  margin: auto;
+  
+}
 /* Extra style for the cancel button (red) */
 .cancelbtn {
   width: auto;
   padding: 10px 30px;
   background-color: #f44336;
-  margin-left: -14px
+  margin-left: -14px;
 }
 
 .container {
@@ -46,8 +60,8 @@ button:hover {
   margin: 24px 0 12px 0;
 }
 
-.bigContainer{
-  display:flex;
+.bigContainer {
+  display: flex;
   align-items: center;
   justify-content: center;
   width: 500px;
@@ -56,17 +70,20 @@ button:hover {
   background-color: green;
 }
 
+.contactTable {
+  border: 1px solid black;
+}
+
 img.avatar {
   width: 30%;
   border-radius: 50%;
 }
 
-#title{
+#title {
   text-align: center;
   background-color: green;
   padding: 10px 10px;
   width: 200px;
   margin: auto;
-  margin-top:10px;
+  margin-top: 10px;
 }
-
