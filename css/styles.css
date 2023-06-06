@@ -18,6 +18,7 @@ input[type="password"] {
   margin: 8px 0;
   display: inline-block;
   border: 1px solid #ccc;
+  border-radius: 5px;
   box-sizing: border-box;
 }
 
@@ -30,6 +31,8 @@ button {
   border: none;
   cursor: pointer;
   width: 100%;
+  border-radius: 5px;
+
 }
 
 button:hover {
@@ -56,19 +59,21 @@ td {
 .imgcontainer {
   text-align: center;
   margin: 24px 0 12px 0;
-  border: 1px solid pink;
 }
 
+.text{
+  border: solid 3px pink;
+}
 .bigContainer {
   display: flex;
   width: 500px;
   margin: auto;
-  border: 2px black solid;
+  /* border: 1px black solid; */
   border-radius: 50px;
-  background-color: aqua;
   position: relative;
   top: 50%;
   transform: translateY(30%);
+  box-shadow: 0px 3px 15px rgba(0,0,0,0.2);
 }
 
 .contactTable {
@@ -78,7 +83,7 @@ td {
 img.avatar {
   width: 30%;
   border-radius: 50%;
-  border: solid pink;
+  border: 2px grey solid;
 }
 
 #registerContainer{
@@ -87,7 +92,6 @@ img.avatar {
 
 #title {
   text-align: center;
-  border: 2px solid green;
   border-radius: 25px;
   padding: 10px 10px;
   width: 200px;
