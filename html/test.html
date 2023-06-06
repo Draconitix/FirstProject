@@ -8,39 +8,42 @@
   </head>
 
   <body>
-    <h1>Login</h1>
-    <form action="./php/Login.php" method="post">
-      <div class="imgcontainer">
-        <img src="../images/img_avatar.png" alt="Avatar" class="avatar" />
-      </div>
+    <h1 id="title">Login</h1>
+    <div class="bigContainer">
+      <form action="./php/Login.php" method="post">
+        <div class="imgcontainer">
+          <img src="../images/img_avatar.png" alt="Avatar" class="avatar"/>
+        </div>
 
-      <div class="container">
-        <label for="userName"><b>Username</b></label>
-        <input
-          type="text"
-          placeholder="Enter Username"
-          id="loginName"
-          name="loginName"
-          required
-        />
+        <div class="container">
+          <label for="userName"><b>Username</b></label>
+          <input
+            type="text"
+            placeholder="Enter Username"
+            id="loginName"
+            name="loginName"
+            required
+          />
 
-        <label for="psw"><b>Password</b></label>
-        <input
-          type="password"
-          placeholder="Enter Password"
-          id="loginPassword"
-          name="loginPassword"
-          required
-        />
+          <label for="psw"><b>Password</b></label>
+          <input
+            type="password"
+            placeholder="Enter Password"
+            id="loginPassword"
+            name="loginPassword"
+            required
+          />
 
-        <button type="submit">Login</button>
-        <div class="links">
+          <button type="submit">Login</button>
+          <div class="links">
+            
+          </div>
+          <div class="container" style="background-color: #f1f1f1">
+          <button type="button" class="cancelbtn">Clear</button>
           Don't have an account? <a href="register.html">Sign up now</a>
+          </div>
         </div>
-        <div class="container" style="background-color: #f1f1f1">
-          <button type="button" class="cancelbtn">Cancel</button>
-        </div>
-      </div>
-    </form>
+      </form>
+    </div>
   </body>
 </html>
