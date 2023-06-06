@@ -46,20 +46,21 @@ td {
 
 .container {
   padding: 16px;
+  border: 1px solid red;
 }
 
 .imgcontainer {
   text-align: center;
   margin: 24px 0 12px 0;
+  border: 1px solid pink;
 }
 
 .bigContainer {
   display: flex;
-  align-items: center;
-  justify-content: center;
   width: 500px;
-  min-height: 100;
+  min-height: 100px;
   margin: auto;
+  border: 1px solid pink;
 }
 
 .contactTable {
@@ -69,6 +70,7 @@ td {
 img.avatar {
   width: 30%;
   border-radius: 50%;
+  border: solid pink;
 }
 
 #title {

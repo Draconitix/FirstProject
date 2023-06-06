@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
   <meta charset="utf-8" />
+
   <head>
     <script type="text/javascript" src="./js/code.js"></script>
     <link href="../css/styles.css" rel="stylesheet" />
@@ -11,49 +12,52 @@
     <h1 id="title">Register</h1>
     <div class="bigContainer">
       <!--form action="../API/Register.php" method="post"-->
+
+      <div class="container">
         <div class="imgcontainer">
           <img src="../images/img_avatar2.png" alt="Avatar" class="avatar" />
         </div>
-        <div class="container">
-          <label for="firstName"><b>First Name</b></label>
-          <input
-            type="text"
-            placeholder="Enter First Name"
-            id="firstName"
-            name="firstName"
-            required
-          />
-          <label for="lastName"><b>Last Name</b></label>
-          <input
-            type="text"
-            placeholder="Enter Last Name"
-            id="lastName"
-            name="lastName"
-            required
-          />
-          <label for="userName"><b>Username</b></label>
-          <input
-            type="text"
-            placeholder="Enter Username"
-            id="userName"
-            name="userName"
-            required
-          />
+        <label for="firstName"><b>First Name</b></label>
+        <input
+          type="text"
+          placeholder="Enter First Name"
+          id="firstName"
+          name="firstName"
+          required
+        />
+        <label for="lastName"><b>Last Name</b></label>
+        <input
+          type="text"
+          placeholder="Enter Last Name"
+          id="lastName"
+          name="lastName"
+          required
+        />
+        <label for="userName"><b>Username</b></label>
+        <input
+          type="text"
+          placeholder="Enter Username"
+          id="userName"
+          name="userName"
+          required
+        />
 
-          <label for="psw"><b>Password</b></label>
-          <input
-            type="password"
-            placeholder="Enter Password"
-            id="password"
-            name="password"
-            required
-          />
+        <label for="psw"><b>Password</b></label>
+        <input
+          type="password"
+          placeholder="Enter Password"
+          id="password"
+          name="password"
+          required
+        />
 
-          <button type="submit" id="registerButton" onclick="doRegister();">Register</button>
-          <div class="links">
-            Already have an account? <a href="index.html">Back to log in</a>
-          </div>
+        <button type="submit" id="registerButton" onclick="doRegister();">
+          Register
+        </button>
+        <div class="links">
+          Already have an account? <a href="index.html">Back to log in</a>
         </div>
+      </div>
       <!--/form-->
     </div>
     <span id="registerResult"></span>
