@@ -1,35 +1,49 @@
 <!DOCTYPE html>
 <html>
-<meta charset="utf-8" />
+  <meta charset="utf-8" />
 
-<head>
-  <title>Login Page</title>
-  <script type="text/javascript" src="/js/code.js"></script>
-  <script type="text/php" src="/API/Login.php"></script>
-  <link href="css/styles.css" rel="stylesheet" />
-</head>
+  <head>
+    <title>Login Page</title>
+    <script type="text/javascript" src="/js/code.js"></script>
+    <script type="text/php" src="/API/Login.php"></script>
+    <link href="css/styles.css" rel="stylesheet" />
+  </head>
 
-<body>
-  <h1>Login</h1>
-  <!--form action="/API/Login.php" method="post"-->
-  <div class="imgcontainer">
-    <img src="../images/img_avatar.png" alt="Avatar" class="avatar" />
-  </div>
+  <body>
+    <h1 id="title">Login</h1>
+    <!--form action="/API/Login.php" method="post"-->
+    <div class="bigContainer">
+      <div class="container">
+        <div class="imgcontainer">
+          <img src="../images/img_avatar.png" alt="Avatar" class="avatar" />
+        </div>
+        <label for="userName"><b>Username</b></label>
+        <input
+          type="text"
+          placeholder="Enter Username"
+          id="loginName"
+          name="loginName"
+          required
+        />
 
-  <div class="container">
-    <label for="userName"><b>Username</b></label>
-    <input type="text" placeholder="Enter Username" id="loginName" name="loginName" required />
+        <label for="psw"><b>Password</b></label>
+        <input
+          type="password"
+          placeholder="Enter Password"
+          id="loginPassword"
+          name="loginPassword"
+          required
+        />
 
-    <label for="psw"><b>Password</b></label>
-    <input type="password" placeholder="Enter Password" id="loginPassword" name="loginPassword" required />
-
-    <button type="submit" id="loginButton" onclick="doLogin();">Login</button>
-    <div class="links">
-      Don't have an account? <a href="register.html">Sign up now</a>
+        <button type="submit" id="loginButton" onclick="doLogin();">
+          Login
+        </button>
+        <div class="links">
+          Don't have an account? <a href="register.html">Sign up now</a>
+        </div>
+      </div>
     </div>
-  </div>
-  <!--/form-->
-  <span id="loginResult"></span>
-</body>
-
+    <!--/form-->
+    <span id="loginResult"></span>
+  </body>
 </html>
