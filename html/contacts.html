@@ -1,13 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
-        <meta charset="utf-8"/>
         <head>
-        <title>Contacts Home</title>
-        </head>
-        
-        <body>
-                <h1> front end > api</h1>
-                <p>this is a paragraph.</p>
-        </body>
+                <title>Contacts Page</title>
+        <script type="text/javascript" src="js/code.js"></script>
+        <link href="css/styles.css" rel="stylesheet">	
+        <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
+        </script>
+</head>	
+        <h1>Data from Previous Page</h1>
+        <div>User ID:<br><span id='userId'></span></div>
+        <script>
+                userId = localStorage.getItem('user-id');
+                document.getElementById('userId').textContent = userId;
+        </script>
 </html>
-        
