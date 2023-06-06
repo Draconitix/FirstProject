@@ -4,13 +4,13 @@
   <head>
     <title>Login Page</title>
     <script type="text/javascript" src="/js/code.js"></script>
-    <script type="text/php" src="../php/Login.php"></script>
+    <script type="text/php" src="/API/Login.php"></script>
     <link href="../css/styles2.css" rel="stylesheet" />
   </head>
 
   <body>
     <h1>Login</h1>
-    <form action="/php/Login.php" method="post">
+    <!--form action="/API/Login.php" method="post"-->
       <div class="imgcontainer">
         <img src="../images/img_avatar.png" alt="Avatar" class="avatar" />
       </div>
@@ -42,6 +42,7 @@
           <button type="button" class="cancelbtn" id="cancelButton">Cancel</button>
         </div>
       </div>
-    </form>
+    <!--/form-->
+     <span id="loginResult"></span>
   </body>
 </html>

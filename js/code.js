@@ -15,7 +15,7 @@ function doLogin()
 	let password = document.getElementById("loginPassword").value;
 //	var hash = md5( password );
 	
-	document.getElementById("loginResult").innerHTML = "";
+	//document.getElementById("loginResult").innerHTML = "";
 
 	let tmp = {login:login,password:password};
 //	var tmp = {login:login,password:hash};
@@ -63,8 +63,8 @@ function doRegister()
 
 	let temp =
 	{
-		firstName: firstName,
-		lastName: lastName,
+		FirstName: firstName,
+		LastName: lastName,
 		Username: userName,
 		Password: password
 	};
@@ -87,7 +87,7 @@ function doRegister()
 			}
 			if (xhr.status == 409)
 			{
-				document.getElementById('registrationMessage').innerHTML = "This username is taken.";
+				document.getElementById('registerResult').innerHTML = "This username is taken.";
 				return;
 			}
 			if (xhr.status == 200)
@@ -96,13 +96,15 @@ function doRegister()
 
 				userId = jsonObject.id;
 				localStorage.setItem('user-id', userId);
+				
+				window.location.href = "contacts.html";
 			}
 		};
 		xhr.send(jsonPayload);
 	}
 	catch(err)
 	{
-		document.getElementById("loginResult").innerHTML = err.message;
+		document.getElementById("registerResult").innerHTML = err.message;
 	}
 }
 function doLogout()
