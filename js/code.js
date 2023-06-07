@@ -107,6 +107,7 @@ function doRegister()
 		document.getElementById("registerResult").innerHTML = err.message;
 	}
 }
+
 function doLogout()
 {
 	userId = 0;

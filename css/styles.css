@@ -74,7 +74,21 @@ td {
   position: relative;
   top: 50%;
   transform: translateY(30%);
-  box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.2);
+  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2);
+  background-color: white;
+}
+
+.passwordContainer {
+  display: flex;
+  width: 500px;
+  margin: auto;
+  /* border: 1px black solid; */
+  border-bottom-left-radius: 50px;
+  border-bottom-right-radius: 50px;
+  position: relative;
+  top: 50%;
+  transform: translateY(30%);
+  box-shadow: 0px 15px 15px rgba(0, 0, 0, 0.2);
   background-color: white;
 }
 
@@ -100,4 +114,40 @@ img.avatar {
   margin: auto;
   margin-top: 10px;
   margin-bottom: 10px;
+}
+
+/* The message box is shown when the user clicks on the password field */
+#message {
+  display:none;
+  color: #000;
+  position: relative;
+  padding: 20px;
+  margin-top: 10px;
+}
+
+#message p {
+  padding: 10px 35px;
+  font-size: 18px;
+}
+
+/* Add a green text color and a checkmark when the requirements are right */
+.valid {
+  color: green;
+}
+
+.valid:before {
+  position: relative;
+  left: -35px;
+  content: "✔";
+}
+
+/* Add a red text color and an "x" when the requirements are wrong */
+.invalid {
+  color: red;
+}
+
+.invalid:before {
+  position: relative;
+  left: -35px;
+  content: "✖";
 }
