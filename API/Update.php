@@ -6,7 +6,6 @@
 	$newLastName = $inData["newLastName"];
 	$Email = $inData["Email"];
 	$Phone = $inData["Phone"];
-	$newAddress = $inData["newAddress"];
 	$ID = $inData["ID"];
 
 
@@ -17,8 +16,8 @@
 		}
 		else
 		{
-			$stmt = $conn->prepare("UPDATE Contacts SET FirstName = ?, LastName = ?, Email = ?, Phone = ?, Address = ? WHERE ID = ?");
-			$stmt->bind_param("sssssi", $newFirstName, $newLastName,$Email,$Phone,$newAddress,$ID);
+			$stmt = $conn->prepare("UPDATE Contacts SET FirstName = ?, LastName = ?, Email = ?, Phone = ? WHERE ID = ?");
+			$stmt->bind_param("ssssi", $newFirstName, $newLastName,$Email,$Phone,$ID);
 			$stmt->execute();
 
 			$stmt->close();

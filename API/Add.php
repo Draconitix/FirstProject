@@ -5,7 +5,6 @@
 	$LastName = $inData["LastName"];
 	$Phone = $inData["Phone"];
 	$Email = $inData["Email"];
-	$Address = $inData["Address"];
 	$UserID = $inData["UserID"];
 
 
@@ -16,11 +15,12 @@
 	}
 	else
 	{
-		$stmt = $conn->prepare("INSERT into Contacts (FirstName, LastName, Phone, Email, Address, UserID) VALUES(?,?,?,?,?,?)");
-		$stmt->bind_param("sssssi", $FirstName, $LastName, $Phone, $Email, $Address, $UserID);
+		$stmt = $conn->prepare("INSERT into Contacts (FirstName, LastName, Phone, Email, UserID) VALUES(?,?,?,?,?)");
+		$stmt->bind_param("ssssi", $FirstName, $LastName, $Phone, $Email, $UserID);
 		$stmt->execute();
 		$stmt->close();
 		$conn->close();
+		sendResultInfoAsJson('{"Added Contact"}');
 	}
 
 	function getRequestInfo()
