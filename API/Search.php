@@ -13,7 +13,7 @@
 	else
 	{
 		$stmt = $conn->prepare("SELECT * from Contacts where (FirstName like ? OR LastName like ?) and UserID=?");
-		$colorName = "%" . $inData["search"] . "%";
+		$colorName = "%" . $inData["Search"] . "%";
 		$stmt->bind_param("sss", $colorName, $colorName, $inData["UserID"]);
 		$stmt->execute();
 		
@@ -61,7 +61,7 @@
 	
 	function returnWithInfo( $searchResults )
 	{
-		$retValue = '{"results":[' . $searchResults . '],"error":""}';
+		$retValue = '{"results":[' . $searchResults . ']}';
 		sendResultInfoAsJson( $retValue );
 	}
 	

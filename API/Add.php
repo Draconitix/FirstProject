@@ -16,13 +16,12 @@
 	}
 	else
 	{
-			$stmt = $conn->prepare("INSERT into Contacts (FirstName, LastName, Phone, Email, Address, UserID) VALUES(?,?,?,?,?,?)");
-			$stmt->bind_param("sssssi", $FirstName, $LastName, $Phone, $Email, $Address, $UserID);
-			$stmt->execute();
-			$stmt->close();
-			$conn->close();
-			returnWithError("");
-		}
+		$stmt = $conn->prepare("INSERT into Contacts (FirstName, LastName, Phone, Email, Address, UserID) VALUES(?,?,?,?,?,?)");
+		$stmt->bind_param("sssssi", $FirstName, $LastName, $Phone, $Email, $Address, $UserID);
+		$stmt->execute();
+		$stmt->close();
+		$conn->close();
+	}
 
 	function getRequestInfo()
 	{

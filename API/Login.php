@@ -14,14 +14,14 @@
 	}
 	else
 	{
-		$stmt = $conn->prepare("SELECT ID, Username, Password FROM Users WHERE Username=? AND Password =?");
+		$stmt = $conn->prepare("SELECT ID, Username, Password, FirstName, LastName FROM Users WHERE Username=? AND Password =?");
 		$stmt->bind_param("ss", $inData["login"], $inData["password"]);
 		$stmt->execute();
 		$result = $stmt->get_result();
 
 		if( $row = $result->fetch_assoc()  )
 		{
-			returnWithInfo( $row['firstName'], $row['lastName'], $row['ID'] );
+			returnWithInfo( $row['FirstName'], $row['LastName'], $row['ID'] );
 		}
 		else
 		{
@@ -49,9 +49,9 @@
 		sendResultInfoAsJson( $retValue );
 	}
 	
-	function returnWithInfo( $firstName, $lastName, $id )
+	function returnWithInfo( $FirstName, $LastName, $ID )
 	{
-		$retValue = '{"id":' . $id . ',"firstName":"' . $firstName . '","lastName":"' . $lastName . '","error":""}';
+		$retValue = '{"ID":' . $ID . ',"FirstName":"' . $FirstName . '","LastName":"' . $LastName . '"}';
 		sendResultInfoAsJson( $retValue );
 	}
 	
