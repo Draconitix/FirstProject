@@ -109,6 +109,37 @@ function doRegister()
 		document.getElementById("registerResult").innerHTML = err.message;
 	}
 }
+// GOAL: return array of json objects
+function getContacts(){
+	let result = new Array();
+
+	let tmp = {
+        search: "",
+        userId: localStorage.getItem(user-id)
+    };
+	let jsonPayload = JSON.stringify(tmp);
+
+    let url = urlBase + '/Search.' + extension;
+    let xhr = new XMLHttpRequest();
+    xhr.open("POST", url, true);
+    xhr.setRequestHeader("Content-type", "application/json; charset=UTF-8");
+    try
+    {
+		xhr.onreadystatechange = function()
+		{
+			if (this.readyState == 4 && this.status == 200)
+			{
+				let jsonObject = JSON.parse(xhr.responseText);
+				return jsonObject.results;
+			}
+		};
+		xhr.send(jsonPayload);
+    }
+    catch(err)
+    {
+        return result;
+    }
+}
 
 function doLogout()
 {
