@@ -12,14 +12,15 @@
     />
   </head>
   <body>
-    <div class="banner">
-      <h1>Contact Manager</h1>
-    <div>Welcome <span id="fullName"></span>!</div>
+    <div>Welcome:<br /><span id="fullName"></span></div>
 
-    </div>
     <div class="table">
       <div id="wrapper"></div>
       <script>
+        let array = [];
+        let x = { FirstName: "No Users Found", Lastname: "No Users Found", Phone: "No Users Found", Email: "No Users Found"}
+        array.push(x);
+        var emptyarray = JSON.stringify(array);
         document.addEventListener("DOMContentLoaded", () => 
         {
           document.getElementById("fullName").textContent =
@@ -28,6 +29,9 @@
             
           getContacts().then(contactData =>
           {
+            if(contactData == null){
+              contactData = emptyarray;
+            }
             new gridjs.Grid({
               search: true,
               columns: [{
@@ -52,27 +56,26 @@
               },
               pagination:
               {
-                limit:5
-              },
-              style: {
-                table: {
-                  border: '3px solid #ccc'
-                },
-                th: {
-                  'background-color': 'rgba(0, 0, 0, 0.1)',
-                  color: '#000',
-                  'border-bottom' : '3px solid #ccc',
-                  'text-align' : 'center'
-                },
-                td:{
-                  'text-align' : 'center'
-                }
+                limit:20
               }
-              
             }).render(document.getElementById("wrapper"));
           });
         });
       </script>
     </div>
+    <br>
+    <div id="addedit">
+      <h6>Add or Edit Contact</h6><br>
+      <input type="hidden" value="" id="ID" name="ID" width="100"/><br>
+      First Name: <input type="text" id="FirstName" placeholder="Enter First Name" width="100"/><br>
+      Last Name: <input type="text" id="LastName" placeholder="Enter Last Name" width="100"/><br>
+      Phone Number: <input type="text" id="Phone" placeholder="Enter Phone Number" width="100"/><br>
+      Email Address: <input type="text" id="Email" placeholder="Enter Email Address" width="100"/>
+      <button type="submit" onclick="addContact">Add Contact</button>
+      <button type="submit" onclick="updateContact" hidden="true">Submit Edited Contact</button>
+    </div>
+    <script>
+
+    </script>
   </body>
 </html>
