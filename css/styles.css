@@ -114,7 +114,7 @@ img.avatar {
 
 /* The message box is shown when the user clicks on the password field */
 #message {
-  display:none;
+  display: none;
   color: #000;
   position: relative;
   padding: 20px;
@@ -146,4 +146,8 @@ img.avatar {
   position: relative;
   left: -35px;
   content: "✖";
+}
+
+.wrapper{
+  
 }
