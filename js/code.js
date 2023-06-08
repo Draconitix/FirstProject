@@ -97,9 +97,7 @@ function doRegister()
 			}
 			if (xhr.status == 200)
 			{
-				setTimeout(function(){
-					document.getElementById('registerResult').innerHTML = "Success!";
-				}, 1000);
+				document.getElementById('registerResult').innerHTML = "Success!";
 				window.location.href = "index.html";
 			}
 		};
@@ -114,31 +112,36 @@ function doRegister()
 
 function getContacts(){
 	let tmp = {
-        UserID: localStorage.getItem("user-id"),
-		Search: ""
-    };
-	let jsonPayload = JSON.stringify(tmp);
-	let jsonObject;
-    let url = urlBase + '/Search.' + extension;
-    let xhr = new XMLHttpRequest();
-    xhr.open("POST", url, true);
-    xhr.setRequestHeader("Content-type", "application/json; charset=UTF-8");
-    try
-    {
-		xhr.onreadystatechange = function()
+	UserID: localStorage.getItem("user-id"),
+	Search: ""
+	};
+
+	let url = urlBase + '/Search.' + extension;
+	const xhr = new XMLHttpRequest();
+	xhr.open("Post", url);
+	xhr.setRequestHeader("Content-Type", "application/json");
+	xhr.responseType = "json";
+
+	return new Promise((resolve, reject) =>
+	{
+		xhr.onreadystatechange = () =>
 		{
-			if (this.readyState == 4 && this.status == 200)
+			if (xhr.readyState != 4)
 			{
-				jsonObject = JSON.parse(xhr.responseText);
-				contactsArray = jsonObject.results;
+				return;
 			}
-		};
-		xhr.send(jsonPayload);
-    }
-    catch(err)
-    {
-        document.getElementById("registerResult").innerHTML = err.message;
-    }
+			if (xhr.status == 200)
+			{
+				resolve(xhr.response);
+			}
+			else
+			{
+				reject(xhr.response);
+			}
+		}
+
+		xhr.send(JSON.stringify(tmp));
+	});
 }
 
 function doLogout()
