@@ -19,23 +19,14 @@
   </head>
   <body>
     <div>First Name:<br /><span id="firstName"></span></div>
-    <script>
-      localStorage.setItem("first-name", "Sonny");
-      document.getElementById("firstName").textContext = firstname;
-    </script>
-    <script>
-     
-      localStorage.setItem("last-name", "Liu");
-      localStorage.setItem("user-id", "5");
-      firstname = localStorage.getItem("first-name");
-      lastname = localStorage.getItem("last-name");
-      document.getElementById("fullname").textContext =
-        firstname + " " + lastname;
-    </script>
+    <div>Last Name:<br /><span id="lastName"></span></div>
     <div>User ID:<br /><span id="userId"></span></div>
     <script>
-      userId = localStorage.getItem("user-id");
-      document.getElementById("userId").textContent = userId;
+      window.onload = function() {
+        document.getElementById("firstName").textContent = localStorage.getItem("first-name");
+        document.getElementById("lastName").textContent = localStorage.getItem("last-name");
+        document.getElementById("userId").textContent = localStorage.getItem("user-id");
+      };
     </script>
     <div id="wrapper"></div>
       <script>
