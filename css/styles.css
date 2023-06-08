@@ -200,3 +200,7 @@ img.avatar {
   background-color: red;
   width: 20%;
 }
+
+#fullNames{
+  font-size: 20px;
+}
