@@ -12,8 +12,11 @@
     />
   </head>
   <body>
-    <div>Welcome:<br /><span id="fullName"></span></div>
+    <div class="banner">
+      <h1>Contact Manager</h1>
+    <div>Welcome <span id="fullName"></span>!</div>
 
+    </div>
     <div class="table">
       <div id="wrapper"></div>
       <script>
@@ -50,7 +53,22 @@
               pagination:
               {
                 limit:5
+              },
+              style: {
+                table: {
+                  border: '3px solid #ccc'
+                },
+                th: {
+                  'background-color': 'rgba(0, 0, 0, 0.1)',
+                  color: '#000',
+                  'border-bottom' : '3px solid #ccc',
+                  'text-align' : 'center'
+                },
+                td:{
+                  'text-align' : 'center'
+                }
               }
+              
             }).render(document.getElementById("wrapper"));
           });
         });

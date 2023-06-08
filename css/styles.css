@@ -74,6 +74,19 @@ td {
   background-color: white;
 }
 
+.banner{
+  display: flex;
+  padding: 25px;
+  color: white;
+  background-color: black;
+  text-align: center;
+  justify-content: space-between;
+  border-radius: 25px;
+  margin: 20px 20px;
+  align-items: center;
+  
+}
+
 .passwordContainer {
   display: flex;
   width: 500px;
@@ -123,7 +136,6 @@ img.avatar {
 
 #message p {
   padding: 10px 35px;
-  font-size: 18px;
 }
 
 /* Add a green text color and a checkmark when the requirements are right */
