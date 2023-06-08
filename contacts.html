@@ -22,13 +22,17 @@
     <div>Last Name:<br /><span id="lastName"></span></div>
     <div>User ID:<br /><span id="userId"></span></div>
     <script>
-      window.onload = function() {
-        document.getElementById("firstName").textContent = localStorage.getItem("first-name");
-        document.getElementById("lastName").textContent = localStorage.getItem("last-name");
-        document.getElementById("userId").textContent = localStorage.getItem("user-id");
+      window.onload = function () {
+        document.getElementById("firstName").textContent =
+          localStorage.getItem("first-name");
+        document.getElementById("lastName").textContent =
+          localStorage.getItem("last-name");
+        document.getElementById("userId").textContent =
+          localStorage.getItem("user-id");
       };
     </script>
-    <div id="wrapper"></div>
+    <div class="table">
+      <div id="wrapper"></div>
       <script>
         let test = 1;
         let search = "";
@@ -38,8 +42,7 @@
             "First Name",
             "Last Name",
             "Phone Number",
-            "Email",
-            "Address",
+            "Email"
           ],
           server: {
             url: "http://cop4331.xyz/API/search.php?UserID=1&Search=search",
@@ -49,11 +52,11 @@
                 card.LastName,
                 card.Phone,
                 card.Email,
-                card.Address,
               ]),
             Request: "no-cors",
           },
         }).render(document.getElementById("wrapper"));
       </script>
+    </div>
   </body>
 </html>
