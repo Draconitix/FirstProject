@@ -112,8 +112,8 @@ function doRegister()
 
 function getContacts(){
 	let tmp = {
-		UserID: localStorage.getItem("user-id"),
-		Search: ""
+	UserID: localStorage.getItem("user-id"),
+	Search: ""
 	};
 
 	let url = urlBase + '/Search.' + extension;
@@ -132,7 +132,6 @@ function getContacts(){
 			}
 			if (xhr.status == 200)
 			{
-
 				resolve(xhr.response.results);
 			}
 			else
@@ -145,13 +144,21 @@ function getContacts(){
 	});
 }
 
-function addContact()
+function doLogout()
 {
+	userId = 0;
+	firstName = "";
+	lastName = "";
+	localStorage.clear();
+	window.location.href = "index.html";
+}
+
+function addContact(){
 	let tmp = {
-		FirstName: document.getElementById("FirstName"),
-		LastName: document.getElementById("LastName"),
-		Phone: document.getElementById("Phone"),
-		Email: document.getElementById("Email"),
+		FirstName: document.getElementById("FirstName").value,
+		LastName: document.getElementById("LastName").value,
+		Phone: document.getElementById("Phone").value,
+		Email: document.getElementById("Email").value,
 		UserID: localStorage.getItem("user-id")
 	};
 	
@@ -171,7 +178,7 @@ function addContact()
 			}
 			if (xhr.status == 200)
 			{
-				document.getElementById("addStatusMessage").textContent = "Contact Added Successfully.";
+				alert("Added Contact.");
 			}
 		}
 		xhr.send(JSON.stringify(tmp));
@@ -180,15 +187,4 @@ function addContact()
 	{
 		document.getElementById("addStatusMessage").textContent = "err";
 	}
-}
-
-function editContacts()
-
-function doLogout()
-{
-	userId = 0;
-	firstName = "";
-	lastName = "";
-	localStorage.clear();
-	window.location.href = "index.html";
 }
