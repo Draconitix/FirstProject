@@ -165,5 +165,7 @@ img.avatar {
 }
 
 .table{
-  
+  border: 1px black solid;
+  display: flex;
+  padding: 25px;
 }
