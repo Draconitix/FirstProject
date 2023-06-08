@@ -180,5 +180,13 @@ img.avatar {
 }
 
 #addEditButton {
-  
+  padding: 10px;
+  background-color: #04aa6d;
+  margin: 25px 25px;
+  border: black 1px solid;
+  height: 50px;
+  width: 150px;
+  border-radius: 15px;
+  text-align: center;
+  size: 36px;
 }
