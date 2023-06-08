@@ -21,41 +21,40 @@
     <div>First Name:<br /><span id="firstName"></span></div>
     <div>Last Name:<br /><span id="lastName"></span></div>
     <div>User ID:<br /><span id="userId"></span></div>
-    <script>
-      window.onload = function () {
-        document.getElementById("firstName").textContent =
-          localStorage.getItem("first-name");
-        document.getElementById("lastName").textContent =
-          localStorage.getItem("last-name");
-        document.getElementById("userId").textContent =
-          localStorage.getItem("user-id");
-      };
-    </script>
     <div class="table">
       <div id="wrapper"></div>
       <script>
         let test = 1;
         let search = "";
-        new gridjs.Grid({
-          search: true,
-          columns: [
-            "First Name",
-            "Last Name",
-            "Phone Number",
-            "Email"
-          ],
-          server: {
-            url: "http://cop4331.xyz/API/search.php?UserID=1&Search=search",
-            then: (data) =>
-              data.data.map((card) => [
-                card.FirstName,
-                card.LastName,
-                card.Phone,
-                card.Email,
-              ]),
-            Request: "no-cors",
-          },
-        }).render(document.getElementById("wrapper"));
+        window.onload = function() {
+          document.getElementById("firstName").textContent =
+            localStorage.getItem("first-name");
+          document.getElementById("lastName").textContent =
+            localStorage.getItem("last-name");
+          document.getElementById("userId").textContent =
+            localStorage.getItem("user-id");
+          let contactsArray = getContacts();
+          new gridjs.Grid({
+            search: true,
+            columns: [{
+              id: "FirstName",
+              name: "First Name"
+            }, {
+              id:"LastName",
+              name: "Last Name"
+            }, {
+              id:"Phone",
+              name: "Phone Number"
+            }, {
+              id:"Email",
+              name: "Email"
+            }],
+            data: 
+              setTimeout(function(){
+                getContacts();
+				      }, 1000);
+          });
+        }
       </script>
     </div>
   </body>

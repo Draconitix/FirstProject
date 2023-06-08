@@ -4,6 +4,7 @@ const extension = 'php';
 let userId = 0;
 let firstName = "";
 let lastName = "";
+const contactsArray = [];
 
 function doLogin()
 {
@@ -109,16 +110,15 @@ function doRegister()
 		document.getElementById("registerResult").innerHTML = err.message;
 	}
 }
-// GOAL: return array of json objects
-function getContacts(){
-	let result = new Array();
 
+
+function getContacts(){
 	let tmp = {
-        search: "",
-        userId: localStorage.getItem(user-id)
+        UserID: localStorage.getItem("user-id"),
+		Search: ""
     };
 	let jsonPayload = JSON.stringify(tmp);
-
+	let jsonObject;
     let url = urlBase + '/Search.' + extension;
     let xhr = new XMLHttpRequest();
     xhr.open("POST", url, true);
@@ -129,15 +129,15 @@ function getContacts(){
 		{
 			if (this.readyState == 4 && this.status == 200)
 			{
-				let jsonObject = JSON.parse(xhr.responseText);
-				return jsonObject.results;
+				jsonObject = JSON.parse(xhr.responseText);
+				contactsArray = jsonObject.results;
 			}
 		};
 		xhr.send(jsonPayload);
     }
     catch(err)
     {
-        return result;
+        document.getElementById("registerResult").innerHTML = err.message;
     }
 }
 
