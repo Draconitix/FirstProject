@@ -16,29 +16,32 @@
         <div class="imgcontainer">
           <img src="../images/img_avatar.png" alt="Avatar" class="avatar" />
         </div>
-        <label for="userName"><b>Username</b></label>
-        <input
-          type="text"
-          placeholder="Enter Username"
-          id="loginName"
-          name="loginName"
-          required
-        />
+        <form action="javascript:doLogin()">
+          <label for="userName"><b>Username</b></label>
+          <input
+            type="text"
+            placeholder="Enter Username"
+            id="loginName"
+            name="loginName"
+            required
+          />
 
-        <label for="psw"><b>Password</b></label>
-        <input
-          type="password"
-          placeholder="Enter Password"
-          id="loginPassword"
-          name="loginPassword"
-          required
-        />
-        <button type="submit" id="loginButton" onclick="doLogin();">
-          Login
-        </button>
-        <div class="links">
-          Don't have an account? <a href="register.html">Sign up now</a>
-        </div>
+          <label for="psw"><b>Password</b></label>
+          <input
+            type="password"
+            placeholder="Enter Password"
+            id="loginPassword"
+            name="loginPassword"
+            required
+          />
+          <span id="loginResult"></span>
+          <button type="submit" id="loginButton">
+            Login
+          </button>
+          <div class="links">
+            Don't have an account? <a href="register.html">Sign up now</a>
+          </div>
+        </form>
       </div>
     </div>
   </body>

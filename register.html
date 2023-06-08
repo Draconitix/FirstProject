@@ -22,7 +22,6 @@
             placeholder="Enter First Name"
             id="firstName"
             name="firstName"
-            title="Input your first name"
             required
           />
           <label for="lastName"><b>Last Name</b></label>
@@ -31,7 +30,6 @@
             placeholder="Enter Last Name"
             id="lastName"
             name="lastName"
-            title="Input your last name"
             required
           />
           <label for="userName"><b>Username</b></label>
@@ -40,7 +38,6 @@
             placeholder="Enter Username"
             id="userName"
             name="userName"
-            title="Input your desired username"
             required
           />
 
@@ -51,9 +48,9 @@
             id="password"
             name="password"
             pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" 
-            title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" 
             required
           />
+          <span id="registerResult"></span>
           <button type="submit" id="registerButton">
             Register
           </button>
@@ -63,6 +60,7 @@
         </form>
       </div>
     </div>
+    
     <div class="passwordContainer">
       <div id="message">
         <h3>Password must contain the following:</h3>

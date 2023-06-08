@@ -33,11 +33,13 @@ function doLogin()
 			if (this.readyState == 4 && this.status == 200) 
 			{
 				let jsonObject = JSON.parse( xhr.responseText );
-				console.log(firstName);
-				userId = jsonObject.id;
+				firstName = jsonObject.FirstName;
+				lastName = jsonObject.LastName;
+				userId = jsonObject.ID;
 		
 				if( userId < 1 )
-				{		
+				{
+
 					document.getElementById("loginResult").innerHTML = "User/Password combination incorrect";
 					return;
 				}
@@ -92,12 +94,8 @@ function doRegister()
 			}
 			if (xhr.status == 200)
 			{
-				let jsonObject = JSON.parse(xhr.responseText);
-
-				userId = jsonObject.id;
-				localStorage.setItem('user-id', userId);
-				
-				window.location.href = "contacts.html";
+				document.getElementById('registerResult').innerHTML = "Success!";
+				window.location.href = "index.html";
 			}
 		};
 		xhr.send(jsonPayload);
