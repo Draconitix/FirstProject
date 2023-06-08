@@ -179,6 +179,7 @@ function addContact(){
 			if (xhr.status == 200)
 			{
 				alert("Added Contact.");
+				location.reload();
 			}
 		}
 		xhr.send(JSON.stringify(tmp));
@@ -187,4 +188,65 @@ function addContact(){
 	{
 		document.getElementById("addStatusMessage").textContent = "err";
 	}
+}
+
+function updateContact(){
+	let tmp = {
+		FirstName: document.getElementById("FirstName").value,
+		LastName: document.getElementById("LastName").value,
+		Phone: document.getElementById("Phone").value,
+		Email: document.getElementById("Email").value,
+		UserID: localStorage.getItem("user-id"),
+		ID: document.getElementById("ID").value
+	};
+	
+	let url = urlBase + '/Update.' + extension;
+	const xhr = new XMLHttpRequest();
+	xhr.open("Post", url);
+	xhr.setRequestHeader("Content-Type", "application/json");
+	xhr.responseType = "json";
+
+	try
+	{
+		xhr.onreadystatechange = () =>
+		{
+			if (xhr.readyState != 4)
+			{
+				return;
+			}
+			if (xhr.status == 200)
+			{
+				document.getElementById("addButton").style.visibility = true;
+				document.getElementById("editButton").style.visibility = false;
+				location.reload();
+			}
+		}
+		xhr.send(JSON.stringify(tmp));
+	}
+	catch(err)
+	{
+		document.getElementById("addStatusMessage").textContent = "err";
+	}
+}
+
+function findContact(array, firstname, lastname){
+    let i = array.results.length;
+    let j = 0;
+    while( j < i){
+        if(array.results[j].FirstName.localeCompare(firstName) == 0  && array.results[j].LastName.localeCompare(lastName) == 0){
+            return array.results[j].ID;
+        }
+        j = j + 1;
+    }
+}
+
+function editButtonClicked(array, firstname, lastname){
+	let id = parseInt(findContact(array, firstname, lastname));
+	document.getElementById("ID").value = array.results[id].ID;
+	document.getElementById("FirstName").value = array.results[id].FirstName;
+	document.getElementById("LastName").value = array.results[id].LastName;
+	document.getElementById("Email").value = array.results[id].Email;
+	document.getElementById("Phone").value = array.results[id].Phone;
+	document.getElementById("addButton").style.visibility = false;
+	document.getElementById("editButton").style.visibility = true;
 }
