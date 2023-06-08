@@ -12,20 +12,16 @@
     />
   </head>
   <body>
-    <div>First Name:<br /><span id="firstName"></span></div>
-    <div>Last Name:<br /><span id="lastName"></span></div>
-    <div>User ID:<br /><span id="userId"></span></div>
+    <div>Welcome:<br /><span id="fullName"></span></div>
+
     <div class="table">
       <div id="wrapper"></div>
       <script>
         document.addEventListener("DOMContentLoaded", () => 
         {
-          document.getElementById("firstName").textContent =
-            localStorage.getItem("first-name");
-          document.getElementById("lastName").textContent =
+          document.getElementById("fullName").textContent =
+            localStorage.getItem("first-name") + " " + 
             localStorage.getItem("last-name");
-          document.getElementById("userId").textContent =
-            localStorage.getItem("user-id");
             
           getContacts().then(contactData =>
           {
@@ -45,6 +41,12 @@
                 name: "Email"
               }],
               data: contactData,
+              language: {
+                'search': 
+                {
+                  'placeholder': 'Search by First or Last Name...'
+                },
+              },
               pagination:
               {
                 limit:5
