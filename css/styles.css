@@ -168,4 +168,5 @@ img.avatar {
   border: 1px black solid;
   display: flex;
   padding: 25px;
+  margin: 20px 20px;
 }
