@@ -132,7 +132,7 @@ function getContacts(){
 			}
 			if (xhr.status == 200)
 			{
-				resolve(xhr.response);
+				resolve(xhr.response.results);
 			}
 			else
 			{
