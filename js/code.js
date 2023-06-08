@@ -112,8 +112,8 @@ function doRegister()
 
 function getContacts(){
 	let tmp = {
-	UserID: localStorage.getItem("user-id"),
-	Search: ""
+		UserID: localStorage.getItem("user-id"),
+		Search: ""
 	};
 
 	let url = urlBase + '/Search.' + extension;
@@ -132,6 +132,7 @@ function getContacts(){
 			}
 			if (xhr.status == 200)
 			{
+
 				resolve(xhr.response.results);
 			}
 			else
@@ -143,6 +144,45 @@ function getContacts(){
 		xhr.send(JSON.stringify(tmp));
 	});
 }
+
+function addContact()
+{
+	let tmp = {
+		FirstName: document.getElementById("FirstName"),
+		LastName: document.getElementById("LastName"),
+		Phone: document.getElementById("Phone"),
+		Email: document.getElementById("Email"),
+		UserID: localStorage.getItem("user-id")
+	};
+	
+	let url = urlBase + '/Add.' + extension;
+	const xhr = new XMLHttpRequest();
+	xhr.open("Post", url);
+	xhr.setRequestHeader("Content-Type", "application/json");
+	xhr.responseType = "json";
+
+	try
+	{
+		xhr.onreadystatechange = () =>
+		{
+			if (xhr.readyState != 4)
+			{
+				return;
+			}
+			if (xhr.status == 200)
+			{
+				document.getElementById("addStatusMessage").textContent = "Contact Added Successfully.";
+			}
+		}
+		xhr.send(JSON.stringify(tmp));
+	}
+	catch(err)
+	{
+		document.getElementById("addStatusMessage").textContent = "err";
+	}
+}
+
+function editContacts()
 
 function doLogout()
 {
