@@ -18,9 +18,13 @@
     />
   </head>
   <body>
-    <div>Hello<br /><span id="fullname"></span></div>
+    <div>First Name:<br /><span id="firstName"></span></div>
     <script>
       localStorage.setItem("first-name", "Sonny");
+      document.getElementById("firstName").textContext = firstname;
+    </script>
+    <script>
+     
       localStorage.setItem("last-name", "Liu");
       localStorage.setItem("user-id", "5");
       firstname = localStorage.getItem("first-name");
