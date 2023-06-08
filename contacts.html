@@ -12,11 +12,14 @@
     />
   </head>
   <body>
-    <h1>Hello <span id="fullname"></span></h1>
+    <div>Hello<br /><span id="fullname"></span></div>
     <script>
-      firstname = localStorage.getItem("firstname");
-      lastname = localStorage.getItem("lastname");
-      document.getElementById("fullname").textContext = (firstname + " " + lastname);
+      localStorage.setItem("first-name", "Sonny");
+      localStorage.setItem("last-name", "Liu");
+      localStorage.setItem("user-id", "5");
+      firstname = localStorage.getItem("first-name");
+      lastname = localStorage.getItem("last-name");
+      document.getElementById("fullname").textContext = firstname + " " + lastname;
     </script>
     <div>User ID:<br /><span id="userId"></span></div>
     <script>

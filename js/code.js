@@ -44,6 +44,8 @@ function doLogin()
 					return;
 				}
 				localStorage.setItem('user-id', userId);
+				localStorage.setItem('first-name', firstName);
+				localStorage.setItem('last-name', lastName);
 	
 				window.location.href = "contacts.html";
 			}
