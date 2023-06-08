@@ -94,7 +94,9 @@ function doRegister()
 			}
 			if (xhr.status == 200)
 			{
-				document.getElementById('registerResult').innerHTML = "Success!";
+				setTimeout(function(){
+					document.getElementById('registerResult').innerHTML = "Success!";
+				}, 1000);
 				window.location.href = "index.html";
 			}
 		};
