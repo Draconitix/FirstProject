@@ -87,6 +87,11 @@ td {
   
 }
 
+/* #fullNames{
+  margin-right: 60%;
+  border: white 2px solid;
+} */
+
 .passwordContainer {
   display: flex;
   width: 500px;
@@ -190,7 +195,8 @@ img.avatar {
   size: 36px;
 }
 
-#logOutbutton
+#logoutButton
 {
-  
+  background-color: red;
+  width: 20%;
 }

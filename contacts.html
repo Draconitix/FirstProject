@@ -14,7 +14,8 @@
   <body>
     <div class="banner">
     <h1>Contact Manager</h1>
-    <div>Welcome <span id="fullName"></span>!</div>
+    <div id="fullNames">Welcome <span id="fullName"></span>!</div>
+    <button id="logoutButton" onclick="doLogout()">Log Out</button>
   </div>
     <div class="table">
       <div id="wrapper"></div>
@@ -92,7 +93,6 @@
       <button type="submit" onclick="updateContact" hidden="true">Submit Edited Contact</button>
     </div>
     </div>
-    <button id="logoutButton" onclick="doLogout()"></button>
     <script>
 
     </script>
